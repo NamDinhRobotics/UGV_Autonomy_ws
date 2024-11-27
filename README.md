@@ -11,6 +11,17 @@ This repository, developed by **NamDinhRobotics**, focuses on designing a high-s
 - **LICENSE**: Details the licensing information for the project.
 
 ---
+## Installation
+- Clone the repository to your local machine using the following command:
+```bash
+git clone https://github.com/NamDinhRobotics/UGV_Autonomy_ws.git
+cd UGV_Autonomy_ws
+catkin_make
+```
+
+---
+## Video Demo
+- Pure_pursuit Control([video](docs/pure_pursuit.mp4)
 
 ## License
 
