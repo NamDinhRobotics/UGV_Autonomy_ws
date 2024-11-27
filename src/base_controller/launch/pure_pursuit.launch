@@ -8,6 +8,7 @@
     <param name="lookahead_distance" value="1.5"/>
     <param name="min_lookahead_distance" value="0.2"/>
     <param name="wheel_base" value="0.36"/>
+    <param name="odometry_topic" value="/odometry_livox"/>
 
     <param name="max_speed" value="1.5"/>
     <param name="min_speed" value="0.3"/>

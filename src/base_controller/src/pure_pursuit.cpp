@@ -18,9 +18,11 @@ public:
         nh_private.param("max_steering_angle", max_steering_angle_, 0.5);
         //wheel_base_
         nh_private.param("wheel_base", wheel_base_, 0.36);
+        //odom topic
+        nh_private.param("odometry_topic", odometry_topic_, std::string("odometry_livox"));
 
         // Subscribers
-        odom_sub_ = nh_.subscribe("odometry_livox", 10, &PurePursuitController::odomCallback, this);
+        odom_sub_ = nh_.subscribe(odometry_topic_, 10, &PurePursuitController::odomCallback, this);
         path_sub_ = nh_.subscribe("loaded_path", 10, &PurePursuitController::pathCallback, this);
 
         // Publishers
@@ -91,6 +93,7 @@ private:
     std::vector<Waypoint> waypoints_ = {};
 
     double wheel_base_{0.36}; // Distance between front and rear axles of the vehicle
+    std::string odometry_topic_;
 
 
     void computeControl() {
