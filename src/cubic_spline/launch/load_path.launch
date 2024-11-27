@@ -1,6 +1,6 @@
 <launch>
 <node pkg="cubic_spline" type="load_path_inter" name="load_path_node" output="screen">
   <param name="file_path" value="/home/dinhnambkhn/UGV_Autonomy_ws/src/cubic_spline/paths/spline_path.csv"/>
-  <param name="step_size" value="0.05"/>
+  <param name="step_size" value="0.01"/>
 </node>
 </launch>

@@ -1,5 +1,10 @@
 <launch>
-<node pkg="cubic_spline" type="spline_fit_rviz" name="cubic_spline_node" output="screen">
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_map_to_odom" args="0 0 0 0 0 0 /map /odom" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_odom_to_cam" args="0 0 0 0 0 0 /odom /camera_init" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_body_to_livox" args="0 0 0 0 0 0 /body /livox_frame" />
+
+
+  <node pkg="cubic_spline" type="spline_fit_rviz" name="cubic_spline_node" output="screen">
   <param name="~file_path" value="/home/dinhnambkhn/UGV_Autonomy_ws/src/cubic_spline/paths/spline_path.csv"/>
 </node>
 </launch>

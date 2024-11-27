@@ -13,14 +13,14 @@ public:
         // Load parameters
         ros::NodeHandle nh_private("~");
         nh_private.param("lookahead_distance", lookahead_distance_, 2.0);
-        nh_private.param("max_speed", max_speed_, 2.0);
+        nh_private.param("max_speed", max_speed_, 4.0);
         nh_private.param("min_speed", min_speed_, 0.22);
         nh_private.param("max_steering_angle", max_steering_angle_, 0.5);
         //wheel_base_
         nh_private.param("wheel_base", wheel_base_, 0.36);
 
         // Subscribers
-        odom_sub_ = nh_.subscribe("odom", 10, &PurePursuitController::odomCallback, this);
+        odom_sub_ = nh_.subscribe("odometry_livox", 10, &PurePursuitController::odomCallback, this);
         path_sub_ = nh_.subscribe("loaded_path", 10, &PurePursuitController::pathCallback, this);
 
         // Publishers

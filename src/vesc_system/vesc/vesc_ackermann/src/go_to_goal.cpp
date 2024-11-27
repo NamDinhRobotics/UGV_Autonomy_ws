@@ -19,7 +19,7 @@ public:
 
         // Subscribers
         goal_sub_ = nh_.subscribe("/move_base_simple/goal", 20, &NavGoalFollower::goalCallback, this);
-        odom_sub_ = nh_.subscribe("/odom", 20, &NavGoalFollower::odomCallback, this);
+        odom_sub_ = nh_.subscribe("/odometry_livox", 20, &NavGoalFollower::odomCallback, this);
 
         // Publisher
         ackermann_pub_ = nh_.advertise<ackermann_msgs::AckermannDriveStamped>("/ackermann_cmd", 20);
