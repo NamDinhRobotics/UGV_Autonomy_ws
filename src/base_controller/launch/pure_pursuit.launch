@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="base_controller" type="pure_pursuit" name="pure_pursuit_controller" output="screen">
+    <param name="lookahead_distance" value="0.5"/>
+    <param name="min_lookahead_distance" value="0.5"/>
+    <param name="wheel_base" value="0.36"/>
+
+    <param name="max_speed" value="2.5"/>
+    <param name="min_speed" value="0.22"/>
+    <param name="max_steering_angle" value="0.5"/>
+  </node>
+</launch>

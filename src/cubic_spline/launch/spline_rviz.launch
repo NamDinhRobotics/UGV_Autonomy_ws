@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="cubic_spline" type="spline_fit_rviz.py" name="cubic_spline_node" output="screen"/>
+</launch>
+

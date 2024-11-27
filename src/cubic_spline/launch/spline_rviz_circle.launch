@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="cubic_spline" type="spline_circle" name="spline_circle" output="screen" />
+</launch>
+

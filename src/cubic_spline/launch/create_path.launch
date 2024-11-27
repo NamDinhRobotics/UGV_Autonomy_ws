@@ -1,0 +1,5 @@
+<launch>
+<node pkg="cubic_spline" type="spline_fit_rviz" name="cubic_spline_node" output="screen">
+  <param name="~file_path" value="/home/dinhnambkhn/UGV_Autonomy_ws/src/cubic_spline/paths/spline_path.csv"/>
+</node>
+</launch>
