@@ -20,10 +20,11 @@ public:
         nh_private.param("wheel_base", wheel_base_, 0.36);
         //odom topic
         nh_private.param("odometry_topic", odometry_topic_, std::string("odometry_livox"));
-
+        //path topic
+        nh_private.param("path_topic", path_topic_, std::string("loaded_path"));
         // Subscribers
         odom_sub_ = nh_.subscribe(odometry_topic_, 10, &PurePursuitController::odomCallback, this);
-        path_sub_ = nh_.subscribe("loaded_path", 10, &PurePursuitController::pathCallback, this);
+        path_sub_ = nh_.subscribe(path_topic_, 10, &PurePursuitController::pathCallback, this);
 
         // Publishers
         ackermann_pub_ = nh_.advertise<ackermann_msgs::AckermannDriveStamped>("/ackermann_cmd", 20);
@@ -94,6 +95,7 @@ private:
 
     double wheel_base_{0.36}; // Distance between front and rear axles of the vehicle
     std::string odometry_topic_;
+    std::string path_topic_;
 
 
     void computeControl() {

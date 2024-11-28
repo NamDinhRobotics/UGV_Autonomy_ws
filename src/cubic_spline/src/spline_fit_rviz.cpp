@@ -23,11 +23,14 @@ public:
 
         ROS_INFO("Using file path: %s", file_name_.c_str());
 
+        //spline_waypoints
+        nh_private.param("waypoints_topic", waypoints_topic_, std::string("spline_waypoints"));
+
         // Subscribe to /move_base_simple/goal
         pose_sub_ = nh_.subscribe("/move_base_simple/goal", 10, &CubicSplineRViz::poseCallback, this);
         line_marker_pub_ = nh_.advertise<visualization_msgs::Marker>("cubic_spline_marker", 10);
         point_marker_pub_ = nh_.advertise<visualization_msgs::Marker>("clicked_points_marker", 10);
-        waypoints_pub_ = nh_.advertise<geometry_msgs::PoseArray>("spline_waypoints", 10);
+        waypoints_pub_ = nh_.advertise<geometry_msgs::PoseArray>(waypoints_topic_, 10);
 
         // Timer for periodic waypoint publication
         timer_ = nh_.createTimer(ros::Duration(0.1), &CubicSplineRViz::timerCallback, this);
@@ -182,6 +185,7 @@ private:
     ros::Timer timer_;                // Timer for periodic waypoint publication
     geometry_msgs::PoseArray waypoints_; // Stores waypoints
     std::vector<Eigen::Vector2d> points_; // Stores selected points as Eigen::Vector2d
+    std::string waypoints_topic_;
 };
 
 int main(int argc, char **argv) {

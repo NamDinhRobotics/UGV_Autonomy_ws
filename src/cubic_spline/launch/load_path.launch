@@ -1,6 +1,11 @@
 <launch>
+<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_map_to_odom2" args="0 0 0 0 0 0 /map /odom" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_odom_to_cam2" args="0 0 0 0 0 0 /odom /camera_init" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_body_to_livox2" args="0 0 0 0 0 0 /body /livox_frame" />
+
 <node pkg="cubic_spline" type="load_path_inter" name="load_path_node" output="screen">
   <param name="file_path" value="/home/dinhnambkhn/UGV_Autonomy_ws/src/cubic_spline/paths/spline_path.csv"/>
   <param name="step_size" value="0.01"/>
+  <param name="path_topic" value="loaded_path"/>
 </node>
 </launch>

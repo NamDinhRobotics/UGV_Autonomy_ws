@@ -104,7 +104,7 @@ public:
         line_marker.color.a = 1.0;
 
         // Generate points along the spline for visualization
-        constexpr int resolution = 100; // Number of points per segment
+        constexpr int resolution = 10; // Number of points per segment
         for (int i = 0; i < resolution * (n - 1); ++i)
         {
             const double ti = i * 1.0 / resolution;

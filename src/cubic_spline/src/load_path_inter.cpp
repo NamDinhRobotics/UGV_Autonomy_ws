@@ -41,9 +41,11 @@ public:
             ros::shutdown();
             return;
         }
+        //path_name_
+        nh_private.param("path_name", path_name_, std::string("loaded_path"));
 
         // Initialize publisher
-        path_pub_ = nh_.advertise<geometry_msgs::PoseArray>("loaded_path", 10);
+        path_pub_ = nh_.advertise<geometry_msgs::PoseArray>(path_name_, 10);
 
         // Start timer to publish path at 100ms intervals
         timer_ = nh_.createTimer(ros::Duration(0.1), &PathPublisher::timerCallback, this);
@@ -56,6 +58,8 @@ private:
     std::string file_name_;
     double step_{}; // Equidistant step size
     geometry_msgs::PoseArray path_;
+    //topic name: loaded_path
+    std::string path_name_;
 
     bool loadPathFromFile() {
         std::ifstream file(file_name_);
