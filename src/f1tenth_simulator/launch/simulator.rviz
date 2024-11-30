@@ -10,6 +10,8 @@ Panels:
         - /Marker6
         - /Marker7
         - /PoseArray1
+        - /Odometry1
+        - /Odometry1/Shape1
       Splitter Ratio: 0.5
     Tree Height: 704
   - Class: rviz/Selection
@@ -252,7 +254,7 @@ Visualization Manager:
       Marker Topic: /clicked_points_marker
       Name: Marker
       Namespaces:
-        {}
+        clicked_points: true
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -260,7 +262,50 @@ Visualization Manager:
       Marker Topic: /cubic_spline_marker
       Name: Marker
       Namespaces:
-        {}
+        cubic_spline: true
+      Queue Size: 100
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 0.20000000298023224
+        Axes Radius: 0.029999999329447746
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Axes
+      Topic: /odom
+      Unreliable: false
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /lookahead_marker
+      Name: Marker
+      Namespaces:
+        pure_pursuit: true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -299,17 +344,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -2.42036771774292
-        Y: 0.7556782364845276
-        Z: -0.0024226231034845114
+        X: 1.258007526397705
+        Y: 2.7332725524902344
+        Z: 0.8201910257339478
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4297964572906494
+      Pitch: 1.3747965097427368
       Target Frame: <Fixed Frame>
-      Yaw: 3.133578300476074
+      Yaw: 3.0635783672332764
     Saved: ~
 Window Geometry:
   Displays:
@@ -329,5 +374,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1374
-  X: 518
-  Y: 216
+  X: 147
+  Y: 149
