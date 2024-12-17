@@ -1,0 +1,8 @@
+<launch>
+  <!-- Publish a static transform from /map to /odom -->
+  <!-- Include the PS3 joystick launch file -->
+  <include file="$(find ps3joy)/launch/ps3.launch" />
+
+  <node pkg="base_controller" type="manual_ps3" name="manual_ps3" output="screen">
+  </node>
+</launch>

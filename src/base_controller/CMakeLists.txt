@@ -37,3 +37,9 @@ include_directories(
 
 add_executable(pure_pursuit src/pure_pursuit.cpp)
 target_link_libraries(pure_pursuit ${catkin_LIBRARIES})
+
+add_executable(manual_ps3 src/manual_ps3.cpp)
+target_link_libraries(manual_ps3 ${catkin_LIBRARIES})
+
+add_executable(pure_manual src/pure_manual.cpp)
+target_link_libraries(pure_manual ${catkin_LIBRARIES})
